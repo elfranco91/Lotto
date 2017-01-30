@@ -1,0 +1,67 @@
+Players =[]
+
+Lotto = []
+maxlengthlist = 6 
+AddPlayers = 0
+
+def start_menu():
+  print('1.Enter lotto numbers\n2.Add players/pick numbers\n3.Remove Players\n4.View This weeks Lotto Numbers\n5.View Players\n6.Exit')
+  selection = input('choose a number from the list above: ')
+  print('\n')  
+  if selection == '1':      
+       while len (Lotto) < maxlengthlist:
+          item = int(input('Enter this weeks lotto numbers, press enter after each number: '))
+          Lotto.append(item)
+    
+          print ('\n\nThese are the Lotto numbers for this week are' + str(Lotto))
+          
+          print('\nWhat would you like to do next\n')
+
+
+  elif selection =='2':
+           
+           AddPlayers = int(input('How many players do you want to add: \n'))
+           for i in range(AddPlayers):
+              if i < AddPlayers:
+               item = input('Enter Player Name:  ')
+               Players.append(item)
+              
+               
+           print('\n\n')    
+           print('The players names are' + str(Players))
+           print('\nWhat would you like to do next?\n')
+          
+                    
+  elif selection == '3':
+         for i, name in enumerate(Players):
+              print ("index", i, "is", name)
+              
+         x = int(input('Enter player index to delete:'))
+         Players.pop(x)
+                  
+        
+        
+         print ('\n\nSuccessfully removed player')
+         print('The Players are' + str(Players))
+         print('\n')
+  elif selection =='4':
+              print('Here is the Lotto numbers for this week' + str( Lotto))
+              print('\nWhat would you like to do next?\n')
+              start_menu()
+  elif selection =='5':         
+       total = 0
+       for item in (Players):
+          total += 1 
+          print('There are '+ str(total) +' players in the Game.\n') 
+          print('Their names are' + str(Players))
+          print('\n\n')
+          
+           
+           
+start_menu()
+start_menu() 
+start_menu()
+start_menu()
+start_menu()             
+          
+    
